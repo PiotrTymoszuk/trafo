@@ -1,0 +1,21 @@
+Package: trafo
+Type: Package
+Title: Transformation Toolset for Vectors, Matrices, Lists and Data Frames
+Version: 0.1.0
+Maintainer: Piotr Tymoszuk <piotr.s.tymoszuk@gmail.com>
+Description: The package provides tools for transformation and inter-conversion 
+    of vectors, matrices, lists and data frames, which expand the 
+    tidyverse environment
+License: GPL-3
+Encoding: UTF-8
+LazyData: true
+Authors@R: 
+    person("Piotr", "Tymoszuk", , "piotr.s.tymoszuk@gmail.com", role = c("aut", "cre"),
+           comment = c(ORCID = "0000-0002-0398-6034"))
+Imports: 
+    dplyr,
+    plyr,
+    purrr,
+    rlang,
+    tibble
+RoxygenNote: 7.2.1
