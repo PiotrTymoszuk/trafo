@@ -1,3 +1,5 @@
+<img src="https://user-images.githubusercontent.com/80723424/225401567-6d316fba-940d-4af5-8d8f-101e501d1f3d.png" width="10%" height="10%" align = "right">
+
 # trafo
 Transformation Toolset for Vectors, Matrices, Lists and Data Frames
 
