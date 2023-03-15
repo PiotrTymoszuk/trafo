@@ -23,5 +23,5 @@ vector are stored in a variable specified by 'names_to'.
 }
 \details{
 a S3 generic function. Its effect can by inverted e.g. by applying
-\code{\link[plyr]{dlply}}.
+\code{\link[plyr]{dlply}} or \code{\link{blast}}.
 }
