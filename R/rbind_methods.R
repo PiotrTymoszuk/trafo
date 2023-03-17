@@ -9,10 +9,12 @@
 #' @details Binding of objects of the same class allowed.
 #' If a data frame binds with a tibble, the result is a data frame.
 #' The binding partners need to be named (i.e. have column or vector names).
+#' `full_rbind()` is a S3 generic function.
 #' @return a data frame, a tibble or a matrix.
 #' @param x a data frame, tibble, matrix or vector.
 #' @param y a data frame, tibble, matrix or vector.
 #' @param ... extra arguments, currently none.
+#' @import rlang
 #' @export full_rbind.data.frame
 #' @export
 
@@ -150,6 +152,7 @@
 #' @details Binding of objects of the same class allowed.
 #' If a data frame binds with a tibble, the result is a data frame.
 #' The binding partners need to be named (i.e. have column or vector names).
+#' `inner_rbind()` is a S3 generic function.
 #' @return a data frame, tibble or a matrix.
 #' @inheritParams full_rbind.data.frame
 #' @export inner_rbind.data.frame

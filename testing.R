@@ -67,7 +67,7 @@
            dict = cyl_reco,
            key = 'cyl',
            value = 'cyl_lab',
-           variable = 'cyl')
+           variable = cyl)
 
   exchange(my_cyl_mtx,
            dict = cyl_reco,

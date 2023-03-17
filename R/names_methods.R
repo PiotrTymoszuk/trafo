@@ -6,6 +6,7 @@
 #'
 #' @description Sets row names of a data frame, tibble or matrix.
 #' A tibble is silently converted to a classical data frame.
+#' @details `set_rownames()` is a S3 generic function.
 #' @return a data frame or matrix.
 #' @param x a data frame, tibble or matrix.
 #' @param row_names a vector of unique row names.
@@ -77,13 +78,14 @@
 #'
 #' @description Sets column names of a data frame, tibble or matrix.
 #' @return a data frame, tibble or matrix.
+#' @details `set_colnames()` is a S3 generic function.
 #' @param x a data frame, tibble or matrix.
 #' @param col_names a vector of unique column names.
 #' @param ... extra parameters, currently none.
 #' @export set_colnames.data.frame
 #' @export
 
-  set_colnames.data.frame <- function(x, col_names, ....) {
+  set_colnames.data.frame <- function(x, col_names, ...) {
 
     ## entry control ------
 

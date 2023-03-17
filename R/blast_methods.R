@@ -1,5 +1,11 @@
 # Methods for the 'blast' generic function
 
+# collate ------
+
+#' @include generics.R
+
+  NULL
+
 # blast function --------
 
 #' Split records of a data frame by variable values.
@@ -7,6 +13,7 @@
 #' @description Splits records of a data frame by values of its variable
 #' or variables. If the splitting factor is a single variable, this operation
 #' reverts the effects of \code{\link{compress}}.
+#' @details S3 generic function.
 #' @param x a data frame or tibble.
 #' @param ... one or more unquoted variables used for splitting.
 #' @param .drop logical, should empty levels of the vector be skipped from

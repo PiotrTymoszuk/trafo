@@ -1,17 +1,36 @@
 # Methods for the compress generic
 
-# default method -------
+# collating --------
+
+#' @include generics.R
+
+  NULL
+
+# default and list method -------
 
 #' Convert a named object into a tibble.
 #'
-#' @description Converts a named object, e.g. an atomic vector into a tibble.
+#' @description Converts a named object, e.g. an atomic vector or a list
+#' into a tibble.
 #' The object elements are stored in a variable named as specified by the
 #' 'values_to' argument, the names are stored under 'names_to' variable.
+#' @details By setting 'simplify' to TRUE, a special behavior for a 'pure' list
+#' of data frames is toggled on. The function detects if all data frames have
+#' identical column names. If so, the result is coerced into a single tibble or
+#' data frame and the values_to argument is ignored.
+#' Otherwise or if simplify is set to FALSE, each element is of the list is
+#' stored in the variable specified by the values_to argument.
+#' The argument simplify set to FALSE makes the function faster.
+#' `compress()` is a S3 generic function. Its effect can by inverted e.g.
+#' by applying \code{\link[plyr]{dlply}} or \code{\link{blast}}.
 #' @return a tibble.
 #' @param x a named object, e.g. atomic vector, to be converted to a tibble.
 #' @param names_to name of the variable storing the names.
 #' @param values_to name of the variable storing the object's elements.
+#' @param simplify logical, should a simplified output be considered for a
+#' list of compatible data frames? See the details section. Default is TRUE.
 #' @param ... extra arguments, currently none.
+#' @import rlang
 #' @export compress.default
 #' @export
 
@@ -40,25 +59,7 @@
 
   }
 
-# list -------
-
-#' Convert a named list into a tibble.
-#'
-#' @description Converts a named list into a tibble.
-#' The object elements are stored in a variable named as specified by the
-#' 'values_to' argument, the names are stored under 'names_to' variable.
-#' @details By setting 'simplify' to TRUE, a special behavior for a 'pure' list
-#' of data frames is toggled on. The function detects if all data frames have
-#' identical column names. If so, the result is coerced into a single tibble or
-#' data frame and the values_to argument is ignored.
-#' Otherwise or if simplify is set to FALSE, each element is of the list is
-#' stored in the variable specified by the values_to argument.
-#' The argument simplify set to FALSE makes the function faster.
-#' @return a tibble.
-#' @param x a named list, to be converted to a tibble.
-#' @param simplify logical, should a simplified output be considered for a
-#' list of compatible data frames? See the details section. Default is TRUE.
-#' @inheritParams compress.default
+#' @rdname compress.default
 #' @export compress.list
 #' @export
 

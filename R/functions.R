@@ -59,7 +59,7 @@
 
     ft_lst <-
       purrr::map_dfr(ft_lst,
-                     function(x) if(any(!complete.cases(x))) NULL else x)
+                     function(x) if(any(!stats::complete.cases(x))) NULL else x)
 
     if(cl_check) {
 

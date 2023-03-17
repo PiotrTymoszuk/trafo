@@ -8,15 +8,19 @@
 #' provided by a dictionary: a data frame with the re-coding scheme.
 #' @details Any numeric object is silently coerced
 #' to a character vector.
-#' @return a vector.
-#' @param x an object, e.g an atomic vector or a matrix.
-#' @param dict a data frame with the recoding scheme. It has to contain columns
+#' `exchange()` is a S3 generic function.
+#' @return a vector, matrix, list or data frame, depending on `x`
+#' @param x an object, e.g an atomic vector, matrix, list or a data frame.
+#' @param variable a quoted or unquoted variable
+#' of the data frame to be re-coded.
+#' @param dict a data frame with the re-coding scheme. It has to contain columns
 #' specified by the key and value arguments.
 #' @param key the name of the dict data frame variable corresponding to
 #' the elements of x: the search key.
 #' @param value the name of the dict data frame variable containing the elements
 #' used for substitution of x: the returned labels/values.
 #' @param ... extra arguments, currently none.
+#' @import rlang
 #' @export exchange.default
 #' @export
 
@@ -78,20 +82,7 @@
 
   }
 
-# list ------
-
-#' Substitute/exchange elements of a list.
-#'
-#' @description Substitutes elements of a list with values
-#' provided by a dictionary: a data frame with the re-coding scheme.
-#' @details Numeric elements are silently coerced
-#' to character.
-#' @return a list.
-#' @param x a list, storing the elements to be substituted.
-#' @param ... extra arguments. Those can be parameters passed to specific
-#' exchange methods, e.g. variable argument passed to
-#' \code{\link{exchange.data.frame}}, if a list of data frames is handled.
-#' @inheritParams exchange.default
+#' @rdname exchange.default
 #' @export exchange.list
 #' @export
 
@@ -118,18 +109,7 @@
 
   }
 
-# data frame -------
-
-#' Substitute/exchange elements of a data frame variable.
-#'
-#' @description Substitutes elements of a data frame variable with values
-#' provided by a dictionary: a data frame with the re-coding scheme.
-#' @details Any numeric variable is silently coerced
-#' to a character one.
-#' @return a vector.
-#' @param x a data frame, storing the variable to be substituted.
-#' @param variable name of the variable to be substituted.
-#' @inheritParams exchange.default
+#' @rdname exchange.default
 #' @export exchange.data.frame
 #' @export
 
@@ -147,11 +127,9 @@
 
     }
 
-    if(!variable %in% names(x)) {
+    variable <- rlang::enexpr(variable)
 
-      stop('variable absent from x.', call. = FALSE)
-
-    }
+    #variable <- rlang::as_label(variable)
 
     ## re-coding
 
