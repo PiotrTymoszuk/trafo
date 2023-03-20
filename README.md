@@ -1,6 +1,6 @@
 [![R](https://github.com/PiotrTymoszuk/trafo/actions/workflows/r.yml/badge.svg)](https://github.com/PiotrTymoszuk/trafo/actions/workflows/r.yml)
 
-<img src="https://user-images.githubusercontent.com/80723424/225401567-6d316fba-940d-4af5-8d8f-101e501d1f3d.png" width="10%" height="10%" align = "right">
+<img src="https://user-images.githubusercontent.com/80723424/226478184-cca8eea0-b9eb-444f-973a-6711ce2a61cf.png" width="10%" height="10%" align = "right">
 
 # trafo
 Transformation Toolset for Vectors, Matrices, Lists and Data Frames
