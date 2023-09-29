@@ -7,7 +7,7 @@
 \usage{
 blast(x, ...)
 
-\method{blast}{data.frame}(x, ..., .drop = TRUE)
+\method{blast}{data.frame}(x, ..., .drop = TRUE, .skip = FALSE)
 }
 \arguments{
 \item{x}{a data frame or tibble.}
@@ -16,6 +16,12 @@ blast(x, ...)
 
 \item{.drop}{logical, should empty levels of the vector be skipped from
 the output? Defaults to TRUE.}
+
+\item{.skip}{logical, should the splitting variables be removed from the
+output? Defaults to FALSE.}
+}
+\value{
+a list of data frames.
 }
 \description{
 Splits records of a data frame by values of its variable

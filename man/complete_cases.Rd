@@ -4,18 +4,27 @@
 \alias{complete_cases}
 \title{Get a complete observation set.}
 \usage{
-complete_cases(x, id_variable = "ID")
+complete_cases(x, ..., .drop = TRUE, .skip = FALSE)
 }
 \arguments{
 \item{x}{a data frame.}
 
-\item{id_variable}{name of the identifier variable of the observation series.}
+\item{...}{the identifier variables of the observation series,
+quoted or unquoted.}
+
+\item{.drop}{logical, should empty levels of the vector be skipped from
+the output? Defaults to TRUE.}
+
+\item{.skip}{logical, should the splitting variables be removed from the
+output? Defaults to FALSE.}
 }
 \value{
 a data frame or tibble.
+
+a data frame.
 }
 \description{
 Chooses complete observation series. A such series is defined
-by the 'id_variable' variable. If any NA is present in such series,
+by one or more identifier variables. If any NA is present in such series,
 the entire series is discarded.
 }

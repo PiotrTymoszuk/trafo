@@ -53,7 +53,7 @@
 # Exchanging -------
 
   exchange(my_cars,
-           variable = 'cyl',
+           variable = cyl,
            dict = cyl_reco,
            key = 'cyl',
            value = 'cyl_lab')
@@ -163,6 +163,8 @@
 
   blast(my_cars, c('cyl', 'gear'))
 
+  blast.data.frame(my_cars, cyl, carb, .skip = TRUE)
+
 # Regular expression search -----
 
   reglook(my_cars,
@@ -174,6 +176,8 @@
 
 # Complete observation series ------
 
-  complete_cases(my_cars2, id_variable = 'cyl')
+  complete_cases(my_cars2, 'cyl')
+
+  complete_cases(my_cars2, gear, .skip = TRUE)
 
 # END -------

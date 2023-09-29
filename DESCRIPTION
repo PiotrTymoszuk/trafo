@@ -1,7 +1,7 @@
 Package: trafo
 Type: Package
 Title: Transformation Toolset for Vectors, Matrices, Lists and Data Frames
-Version: 0.2.1
+Version: 0.2.2
 Maintainer: Piotr Tymoszuk <piotr.s.tymoszuk@gmail.com>
 Description: The package provides tools for transformation and inter-conversion 
     of vectors, matrices, lists and data frames, which expand the 
@@ -14,7 +14,6 @@ Authors@R:
            comment = c(ORCID = "0000-0002-0398-6034"))
 Imports: 
     dplyr,
-    plyr,
     purrr,
     tibble, 
     figur

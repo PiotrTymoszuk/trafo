@@ -26,14 +26,22 @@
 #' Get a complete observation set.
 #'
 #' @description Chooses complete observation series. A such series is defined
-#' by the 'id_variable' variable. If any NA is present in such series,
+#' by one or more identifier variables. If any NA is present in such series,
 #' the entire series is discarded.
+#'
 #' @return a data frame or tibble.
 #' @param x a data frame.
-#' @param id_variable name of the identifier variable of the observation series.
+#' @param ... the identifier variables of the observation series,
+#' quoted or unquoted.
+#' @inheritParams blast.data.frame
+#'
+#' @return a data frame.
+#'
 #' @export
 
-  complete_cases <- function(x, id_variable = 'ID') {
+  complete_cases <- function(x, ...,
+                             .drop = TRUE,
+                             .skip = FALSE) {
 
     ## entry control
 
@@ -43,19 +51,11 @@
 
     }
 
-    if(!id_variable %in% names(x)) {
-
-      stop('id_variable is absent from x.', call. = FALSE)
-
-    }
-
     cl_check <- tibble::is_tibble(x)
 
     ## filtering
 
-    ft_lst <-
-      plyr::dlply(x,
-                  id_variable)
+    ft_lst <- blast(x, ..., .drop = .drop, .skip = .skip)
 
     ft_lst <-
       purrr::map_dfr(ft_lst,
