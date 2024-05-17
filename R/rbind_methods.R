@@ -30,7 +30,7 @@
 
     }
 
-    if(!tibble::is_tibble(x) | !tibble::is_tibble(x)) {
+    if(!is_tibble(x) | !is_tibble(y)) {
 
       x <- as.data.frame(x)
       y <- as.data.frame(y)
@@ -46,13 +46,13 @@
 
     for(i in miss1){
 
-      x <-  dplyr::mutate(x, !!i := NA)
+      x <-  mutate(x, !!i := NA)
 
     }
 
     for(i in miss2){
 
-      y <- dplyr::mutate(y, !!i := NA)
+      y <- mutate(y, !!i := NA)
 
     }
 
@@ -170,7 +170,7 @@
 
     }
 
-    if(!tibble::is_tibble(x) | !tibble::is_tibble(x)) {
+    if(!is_tibble(x) | !is_tibble(y)) {
 
       x <- as.data.frame(x)
       y <- as.data.frame(y)

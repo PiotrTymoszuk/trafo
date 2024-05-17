@@ -38,7 +38,7 @@
 
     ## splitting vector --------
 
-    sel_frame <- dplyr::select(x, ...)
+    sel_frame <- select(x, ...)
 
     split_vec <- interaction(as.list(sel_frame), drop = .drop)
 

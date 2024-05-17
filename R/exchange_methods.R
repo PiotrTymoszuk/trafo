@@ -51,8 +51,8 @@
 
     ## annotation
 
-    trans_vec <- rlang::set_names(dict[[value]],
-                                  dict[[key]])
+    trans_vec <- set_names(dict[[value]],
+                           dict[[key]])
 
     if(!is.matrix(x)) {
 
@@ -101,11 +101,11 @@
 
     ## re-coding
 
-    purrr::map(x,
-               exchange,
-               dict = dict,
-               key = key,
-               value = value, ...)
+    map(x,
+        exchange,
+        dict = dict,
+        key = key,
+        value = value, ...)
 
   }
 
@@ -127,7 +127,7 @@
 
     }
 
-    variable <- rlang::enexpr(variable)
+    variable <- enexpr(variable)
 
     #variable <- rlang::as_label(variable)
 

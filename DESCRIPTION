@@ -1,7 +1,7 @@
 Package: trafo
 Type: Package
 Title: Transformation Toolset for Vectors, Matrices, Lists and Data Frames
-Version: 0.2.2
+Version: 0.2.3
 Maintainer: Piotr Tymoszuk <piotr.s.tymoszuk@gmail.com>
 Description: The package provides tools for transformation and inter-conversion 
     of vectors, matrices, lists and data frames, which expand the 
@@ -24,9 +24,11 @@ Collate:
     'compress_methods.R'
     'exchange_methods.R'
     'functions.R'
+    'imports.R'
     'names_methods.R'
     'rbind_methods.R'
     'reglook_methods.R'
+    'safe_transformation.R'
     'utils.R'
 Depends: 
     rlang

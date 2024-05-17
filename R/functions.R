@@ -51,19 +51,19 @@
 
     }
 
-    cl_check <- tibble::is_tibble(x)
+    cl_check <- is_tibble(x)
 
     ## filtering
 
     ft_lst <- blast(x, ..., .drop = .drop, .skip = .skip)
 
     ft_lst <-
-      purrr::map_dfr(ft_lst,
-                     function(x) if(any(!stats::complete.cases(x))) NULL else x)
+      map_dfr(ft_lst,
+              function(x) if(any(!complete.cases(x))) NULL else x)
 
     if(cl_check) {
 
-      return(tibble::as_tibble(ft_lst))
+      return(as_tibble(ft_lst))
 
     } else {
 

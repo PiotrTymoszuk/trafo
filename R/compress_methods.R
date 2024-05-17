@@ -54,8 +54,8 @@
 
     ## compression
 
-    tibble::tibble(!!names_to := names(x),
-                   !!values_to := x)
+    tibble(!!names_to := names(x),
+           !!values_to := x)
 
   }
 
@@ -84,39 +84,39 @@
 
     stopifnot(is.logical(simplify))
 
-    x <- purrr::compact(x)
+    x <- compact(x)
 
     ## compression
 
     if(!simplify) {
 
-      return(tibble::tibble(!!names_to := names(x),
-                            !!values_to := x))
+      return(tibble(!!names_to := names(x),
+                    !!values_to := x))
 
     }
 
-    cl_check <- purrr::map_lgl(x, is.data.frame)
+    cl_check <- map_lgl(x, is.data.frame)
 
     if(any(!cl_check)) {
 
-      return(tibble::tibble(!!names_to := names(x),
-                            !!values_to := x))
+      return(tibble(!!names_to := names(x),
+                    !!values_to := x))
 
     }
 
-    colname_check <- purrr::map(x, colnames)
+    colname_check <- map(x, colnames)
 
-    cmm_colnames <- purrr::reduce(unname(colname_check), intersect)
+    cmm_colnames <- reduce(unname(colname_check), intersect)
 
     if(!identical(colname_check[[1]], cmm_colnames)) {
 
-      return(tibble::tibble(!!names_to := names(x),
-                            !!values_to := x))
+      return(tibble(!!names_to := names(x),
+                    !!values_to := x))
 
     }
 
-    purrr::map2_dfr(x, names(x),
-                    ~dplyr::mutate(.x, !!names_to := .y))
+    map2_dfr(x, names(x),
+             ~mutate(.x, !!names_to := .y))
 
   }
 
