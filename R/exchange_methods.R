@@ -4,12 +4,17 @@
 
 #' Substitute/exchange object elements.
 #'
-#' @description Substitutes elements of a vector or other object with values
+#' @description
+#' Substitutes elements of a vector or other object with values
 #' provided by a dictionary: a data frame with the re-coding scheme.
-#' @details Any numeric object is silently coerced
+#'
+#' @details
+#' Any numeric object is silently coerced
 #' to a character vector.
 #' `exchange()` is a S3 generic function.
+#'
 #' @return a vector, matrix, list or data frame, depending on `x`
+#'
 #' @param x an object, e.g an atomic vector, matrix, list or a data frame.
 #' @param variable a quoted or unquoted variable
 #' of the data frame to be re-coded.
@@ -20,8 +25,7 @@
 #' @param value the name of the dict data frame variable containing the elements
 #' used for substitution of x: the returned labels/values.
 #' @param ... extra arguments, currently none.
-#' @import rlang
-#' @export exchange.default
+#'
 #' @export
 
   exchange.default <- function(x,
@@ -83,7 +87,6 @@
   }
 
 #' @rdname exchange.default
-#' @export exchange.list
 #' @export
 
   exchange.list <- function(x,
@@ -110,7 +113,6 @@
   }
 
 #' @rdname exchange.default
-#' @export exchange.data.frame
 #' @export
 
   exchange.data.frame <- function(x,
@@ -133,11 +135,11 @@
 
     ## re-coding
 
-    dplyr::mutate(x,
-                  !!variable := exchange(.data[[variable]],
-                                         dict = dict,
-                                         key = key,
-                                         value = value))
+    mutate(x,
+           !!variable := exchange(.data[[variable]],
+                                  dict = dict,
+                                  key = key,
+                                  value = value))
 
   }
 

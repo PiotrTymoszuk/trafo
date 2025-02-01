@@ -4,18 +4,22 @@
 
 #' Full row binding of two data frames, matrices or vectors.
 #'
-#' @description Binds two data frames, tibbles, matrices or vectors by rows,
+#' @description
+#' Binds two data frames, tibbles, matrices or vectors by rows,
 #' missing variables are filled with NA.
-#' @details Binding of objects of the same class allowed.
+#'
+#' @details
+#' Binding of objects of the same class allowed.
 #' If a data frame binds with a tibble, the result is a data frame.
 #' The binding partners need to be named (i.e. have column or vector names).
 #' `full_rbind()` is a S3 generic function.
+#'
 #' @return a data frame, a tibble or a matrix.
+#'
 #' @param x a data frame, tibble, matrix or vector.
 #' @param y a data frame, tibble, matrix or vector.
 #' @param ... extra arguments, currently none.
-#' @import rlang
-#' @export full_rbind.data.frame
+#'
 #' @export
 
   full_rbind.data.frame <- function(x, y, ...) {
@@ -61,7 +65,6 @@
   }
 
 #' @rdname full_rbind.data.frame
-#' @export full_rbind.matrix
 #' @export
 
   full_rbind.matrix <- function(x, y, ...) {
@@ -111,7 +114,6 @@
   }
 
 #' @rdname full_rbind.data.frame
-#' @export full_rbind.default
 #' @export
 
   full_rbind.default <- function(x, y, ...) {
@@ -147,15 +149,19 @@
 
 #' Inner row binding of two data frames.
 #'
-#' @description Binds two data frames, tibbles, matrices or vectors by rows,
+#' @description
+#' Binds two data frames, tibbles, matrices or vectors by rows,
 #' variables missing in one of the binding partners are removed.
-#' @details Binding of objects of the same class allowed.
+#'
+#' @details
+#' Binding of objects of the same class allowed.
 #' If a data frame binds with a tibble, the result is a data frame.
 #' The binding partners need to be named (i.e. have column or vector names).
 #' `inner_rbind()` is a S3 generic function.
+#'
 #' @return a data frame, tibble or a matrix.
+#'
 #' @inheritParams full_rbind.data.frame
-#' @export inner_rbind.data.frame
 #' @export
 
   inner_rbind.data.frame <- function(x, y, ...) {
@@ -189,7 +195,6 @@
   }
 
 #' @rdname inner_rbind.data.frame
-#' @export inner_rbind.matrix
 #' @export
 
   inner_rbind.matrix <- function(x, y, ...) {
@@ -220,7 +225,6 @@
   }
 
 #' @rdname inner_rbind.data.frame
-#' @export inner_rbind.default
 #' @export
 
   inner_rbind.default <- function(x, y, ...) {

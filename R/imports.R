@@ -8,6 +8,7 @@
 #' @importFrom rlang `:=`
 #' @importFrom rlang set_names
 #' @importFrom rlang enexpr
+#' @importFrom rlang .data
 #'
 #' @importFrom purrr compact
 #' @importFrom purrr map_lgl
@@ -22,5 +23,9 @@
 #' @importFrom tibble as_tibble
 #'
 #' @importFrom stats complete.cases
+#'
+#' @importFrom figur reglook
+#' @importFrom figur reglook.default
+#' @importFrom figur reglook.data.frame
 
   NULL

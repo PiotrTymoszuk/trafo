@@ -25,6 +25,3 @@ a data frame, tibble or matrix.
 \description{
 Sets column names of a data frame, tibble or matrix.
 }
-\details{
-`set_colnames()` is a S3 generic function.
-}

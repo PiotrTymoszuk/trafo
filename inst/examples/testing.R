@@ -163,7 +163,7 @@
 
   blast(my_cars, c('cyl', 'gear'))
 
-  blast.data.frame(my_cars, cyl, carb, .skip = TRUE)
+  blast(my_cars, cyl, carb, .skip = TRUE)
 
 # Regular expression search -----
 
@@ -187,6 +187,45 @@
   safely_mutate(my_cars,
                 new_cyl = as.character(cyl)^2)
 
+# Re-arrangement of vectors, matrices, and data frames -------
 
+  ## the default method for vectors and lists
+
+  to_head(LETTERS, 3:1)
+
+  LETTERS %>%
+    set_names(letters) %>%
+    as.list %>%
+    to_tail(c('a', 'e', 'f'))
+
+ # LETTERS %>%
+  #  to_tail(c('a', 'b'))
+
+  ## matrix method
+
+  my_mtx %>%
+    to_head(c(18:20))
+
+  my_mtx %>%
+    to_tail(paste0('observation_', 1:5))
+
+  ## data frame
+
+  my_cars2 %>%
+    to_head(8:14)
+
+  my_cars2 %>%
+    to_tail(c('Merc 240D', 'Chrysler Imperial'))
+
+  ## tibble
+
+  my_cars %>%
+    to_head(8:14)
+
+  my_cars %>%
+    to_tail(8:14)
+
+  #my_cars %>%
+   # to_tail(c('Merc 240D', 'Chrysler Imperial'))
 
 # END -------

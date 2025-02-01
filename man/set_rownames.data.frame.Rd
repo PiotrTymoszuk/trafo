@@ -26,6 +26,3 @@ a data frame or matrix.
 Sets row names of a data frame, tibble or matrix.
 A tibble is silently converted to a classical data frame.
 }
-\details{
-`set_rownames()` is a S3 generic function.
-}

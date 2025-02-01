@@ -25,7 +25,6 @@
 #'
 #' @return a list of data frames.
 #'
-#' @export blast.data.frame
 #' @export
 
   blast.data.frame <- function(x, ..., .drop = TRUE, .skip = FALSE) {

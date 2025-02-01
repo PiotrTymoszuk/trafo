@@ -6,72 +6,56 @@
 #' @param ... extra arguments passed to the methods.
 #' @export
 
-  exchange <- function(x, ...) {
-
-    UseMethod('exchange')
-
-  }
+  exchange <- function(x, ...) UseMethod('exchange')
 
 # Compact elements of a list or vector into a data frame -----
 
 #' @rdname compress.default
 #' @export
 
-  compress <- function(x, names_to = 'names', ...) {
+  compress <- function(x, names_to = 'names', ...) UseMethod('compress')
 
-    UseMethod('compress')
-
-  }
-
-# Spilt records of a data frame ------
+# Split records of a data frame ------
 
 #' @rdname blast.data.frame
 #' @export
 
-  blast <- function(x, ...) {
-
-    UseMethod('blast')
-
-  }
+  blast <- function(x, ...) UseMethod('blast')
 
 # Row and column names --------
 
 #' @rdname set_rownames.data.frame
 #' @export
 
-  set_rownames <- function(x, ...) {
-
-    UseMethod('set_rownames')
-
-  }
+  set_rownames <- function(x, ...) UseMethod('set_rownames')
 
 #' @rdname set_colnames.data.frame
 #' @export
 
-  set_colnames <- function(x, ...) {
-
-    UseMethod('set_colnames')
-
-  }
+  set_colnames <- function(x, ...) UseMethod('set_colnames')
 
 # Row binding ------
 
 #' @rdname full_rbind.data.frame
 #' @export
 
-  full_rbind <- function(x, y, ...) {
-
-    UseMethod('full_rbind')
-
-  }
+  full_rbind <- function(x, y, ...) UseMethod('full_rbind')
 
 #' @rdname inner_rbind.data.frame
 #' @export
 
-  inner_rbind <- function(x, y, ...) {
+  inner_rbind <- function(x, y, ...) UseMethod('inner_rbind')
 
-    UseMethod('inner_rbind')
+# Shifting elements of a list, vector, matrix, or a data frame -------
 
-  }
+#' @rdname to_head.default
+#' @export
+
+  to_head <- function(x, ...) UseMethod('to_head')
+
+#' @rdname to_head.default
+#' @export
+
+  to_tail <- function(x, ...) UseMethod('to_tail')
 
 # END -----
